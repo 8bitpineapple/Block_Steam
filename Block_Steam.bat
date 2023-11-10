@@ -1,5 +1,5 @@
 @echo off
-set "RuleName=Block_Steam"
+set RuleName=Block_Steam
 
 :: Check if the firewall rule exists
 netsh advfirewall firewall show rule name="%RuleName%" > nul 2>&1
@@ -7,23 +7,9 @@ netsh advfirewall firewall show rule name="%RuleName%" > nul 2>&1
 if %errorlevel% equ 0 (
     :: Firewall Rule Exists
     echo Firewall rule "%RuleName%" exists.
+    goto ToggleFireWallRule
+    
 
-    :: Check if the rule is enabled
-    netsh advfirewall firewall show rule name="%RuleName%" | find "Enabled:                              No" > nul
-
-    if %errorlevel% equ 0 (
-	echo Enabling Internet Access for Steam
-        netsh advfirewall firewall set rule name="%RuleName%" new enable=no
-        echo Internet access available.
-	goto Done
-
-    ) else (
-	echo Disabling Internet Access for Steam
-        netsh advfirewall firewall set rule name="%RuleName%" new enable=yes
-        echo Internet access disabled.
-	goto Done
-
-    )
 ) else (
 :: Firewall Rule Doesn't Exist
     echo Firewall rule "%RuleName%" does not exist.
@@ -63,6 +49,25 @@ if %errorlevel% neq 0 (
 ) else (
     echo Firewall rule "%RuleName%" already exists. No action taken.
 )
+
+goto Done
+
+:ToggleFireWallRule
+:: Check if the rule is enabled
+netsh advfirewall firewall show rule name="%RuleName%" | find "Enabled:                              Yes" > nul
+
+if %errorlevel% equ 0 (
+    echo Enabling Internet Acess for Steam
+    netsh advfirewall firewall set rule name="%RuleName%" new enable=no
+    echo Internet access available.
+
+) else (
+    echo Disabling Internet Acess for Steam
+    netsh advfirewall firewall set rule name="%RuleName%" new enable=yes
+    echo Internet access disabled.
+)
+goto Done
+
 
 :Done
 pause
