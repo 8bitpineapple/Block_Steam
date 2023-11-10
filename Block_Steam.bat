@@ -13,11 +13,11 @@ if %errorlevel% equ 0 (
 ) else (
 :: Firewall Rule Doesn't Exist
     echo Firewall rule "%RuleName%" does not exist.
-    goto FindPath
+    goto CreateRule
 )
 
 
-:FindPath
+:CreateRule
 setlocal enabledelayedexpansion
 
 :: Find Steam installation folder from Windows registry
