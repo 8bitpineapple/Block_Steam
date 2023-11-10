@@ -2,7 +2,7 @@
 A Batch file script to toggle Steams access to the internet.
 
 # To use:
-[Download](https://github.com/8bitpineapple/Block_Steam/releases/download/v1.0.0/Block_Steam.bat) the batch file Block_Steam.bat
+[Download](https://github.com/8bitpineapple/Block_Steam/releases/download/v1.0.1/block_steam.bat) the batch file Block_Steam.bat
 1. Right click Run as Admin - This should disable steam from the internet.
 2. Run as Admin again - This should re-enable steam to the internet.
 
