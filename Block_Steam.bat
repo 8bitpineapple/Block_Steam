@@ -1,5 +1,5 @@
 @echo off
-set "RuleName=Steam_Internet"
+set "RuleName=Block_Steam"
 
 :: Check if the firewall rule exists
 netsh advfirewall firewall show rule name="%RuleName%" > nul 2>&1
