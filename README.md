@@ -1,5 +1,5 @@
 # Block_Steam
-A Batch file script to toggle Steams access to the internet. [Download](https://github.com/8bitpineapple/Block_Steam/releases/download/v1.0.0/Block_Steam.bat)
+A Batch file script to toggle Steams access to the internet.
 
 # To use:
 [Download](https://github.com/8bitpineapple/Block_Steam/releases/download/v1.0.0/Block_Steam.bat) the batch file Block_Steam.bat
