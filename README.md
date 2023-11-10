@@ -4,7 +4,7 @@ A Batch file script to toggle Steams access to the internet.
 # To use:
 Download the batch file Block_Steam.bat
 1. Right click Run as Admin - This should disable steam from the internet.
-2. Run as Admin again - This should renable steam to the internet.
+2. Run as Admin again - This should re-enable steam to the internet.
 
 # Windows Shortcut to run as admin by default.
 For ease of use you can create a windows shortcut that runs as admin:
